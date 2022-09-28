@@ -11,8 +11,11 @@ pub enum ContractError {
     #[error("{0}")]
     Payment(#[from] PaymentError),
 
-    #[error("Unauthorized")]
-    Unauthorized {},
+    #[error("Unauthorized; only admin may register or unregister code ID")]
+    UnauthorizedRegistration {},
+
+    #[error("Unauthorized; only admin may update admin")]
+    UnauthorizedUpdateAdmin {},
 
     #[error("Incorrect payment amount")]
     IncorrectPaymentAmount {},
@@ -22,9 +25,6 @@ pub enum ContractError {
 
     #[error("Code ID {0} has already been registered on chain {1}")]
     CodeIDAlreadyRegistered(u64, String),
-
-    #[error("Version {0} has already been registered for contract {1} on chain {2}")]
-    VersionAlreadyRegistered(String, String, String),
 
     #[error("Invalid CW20, this address is not a CW20")]
     InvalidCw20 {},

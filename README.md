@@ -1,6 +1,6 @@
-# code-id-dao
+# code-id-registry
 
-DAO for managing code IDs in Cosmos
+A registry for storing code ID to checksum mappings.
 
 ## Connect
 

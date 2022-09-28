@@ -5,7 +5,7 @@ use cosmwasm_schema::{export_schema, export_schema_with_title, remove_schemas, s
 
 use cw_code_id_registry::{
     msg::{
-        ExecuteMsg, GetRegistrationResponse, InfoForCodeIdResponse, InstantiateMsg,
+        ExecuteMsg, GetCodeIdInfoResponse, GetRegistrationResponse, InstantiateMsg,
         ListRegistrationsResponse, QueryMsg, ReceiveMsg,
     },
     state::{Config, PaymentInfo, Registration},
@@ -24,7 +24,7 @@ fn main() {
     export_schema(&schema_for!(PaymentInfo), &out_dir);
     export_schema(&schema_for!(Registration), &out_dir);
     export_schema(&schema_for!(GetRegistrationResponse), &out_dir);
-    export_schema(&schema_for!(InfoForCodeIdResponse), &out_dir);
+    export_schema(&schema_for!(GetCodeIdInfoResponse), &out_dir);
     export_schema(&schema_for!(ListRegistrationsResponse), &out_dir);
 
     // Auto TS code generation expects the query return type as QueryNameResponse
